@@ -15,8 +15,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/api", api);
 
-// app.listen(CONSTANTS.PORT || 3000, () => {
-//   console.log("connected to 3000");
-// });
-
-module.exports = app;
+app.listen(CONSTANTS.PORT || 3000, () => {
+  console.log("connected to 3000");
+});
