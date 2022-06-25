@@ -1,0 +1,38 @@
+{
+  "name": "fampay-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "NODE_ENV=dev nodemon ./server.js",
+    "start:prd": "NODE_ENV=prd nodemon ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ubaid-Manzoor/FamPay-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ubaid-Manzoor/FamPay-assignment/issues"
+  },
+  "homepage": "https://github.com/Ubaid-Manzoor/FamPay-assignment#readme",
+  "dependencies": {
+    "aws-serverless-express": "^3.4.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.10.7",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "googleapis": "^89.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.3",
+    "mongoose": "^5.10.19",
+    "node-schedule": "^2.0.0",
+    "prettier": "^2.7.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}

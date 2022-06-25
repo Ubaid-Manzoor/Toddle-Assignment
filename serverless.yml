@@ -1,0 +1,43 @@
+org: ubaidmanzoor
+service: virtual-classroom
+
+frameworkVersion: '3'
+
+#package:
+#  patterns:
+#    - '!node_modules'
+#    - '!layers'
+#    - '!.idea'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${opt:stage, 'dev'}
+  region: ${self:custom.region.${opt:stage,'dev'}}
+  memorySize: 256
+  profile: personal
+
+#layers:
+#  nodeModules:
+#    path: ./layers
+#    name: nodeModules-${opt:stage, 'dev'}
+#    compatibleRuntimes:
+#      - nodejs14.x
+
+functions:
+  VirtualClassroom:
+    name: VirtualClassroom
+    handler: lambda.handler
+    events:
+      - http:
+          path: api/v1/assignment/submissions/{id}
+          method: get
+      - http:
+          path: api/v1/assignment/feed/{id}
+          method: get
+
+
+custom:
+  region:
+    dev: ap-south-1
+    prod: ap-southeast-1
